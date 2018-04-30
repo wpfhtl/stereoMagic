@@ -4,7 +4,9 @@ project(stereo)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+set(OpenCV_DIR /home/wpf/opencv/release)
 find_package(catkin REQUIRED COMPONENTS
+  OpenCV REQUIRED
   cv_bridge
   image_transport
   message_filters
@@ -30,6 +32,7 @@ catkin_package(
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 
@@ -42,7 +45,7 @@ add_executable(draw_boxes src/draw_boxes.cpp)
 
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(stereo_node ${catkin_LIBRARIES})
-target_link_libraries(calib_camera ${catkin_LIBRARIES})
+target_link_libraries(stereo_node ${catkin_LIBRARIES} ${OpenCV_LIBS})
+target_link_libraries(calib_camera ${catkin_LIBRARIES} ${OpenCV_LIBS})
 target_link_libraries(stereo_tf_broadcaster ${catkin_LIBRARIES})
 target_link_libraries(draw_boxes ${catkin_LIBRARIES})

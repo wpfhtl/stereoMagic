@@ -347,7 +347,7 @@ int main(int argc, char** argv)
     Size boardSize;
     string imagelistfn;
     bool showRectified;
-    cv::CommandLineParser parser(argc, argv, "{w|9|}{h|6|}{s|1.0|}{nr||}{help||}{@input|/home/rachillesf/opencv/samples/data/stereo_calib.xml|}");
+    cv::CommandLineParser parser(argc, argv, "{w|9|}{h|6|}{s|1.0|}{nr||}{help||}{@input|~/opencv/samples/data/stereo_calib.xml|}");
     if (parser.has("help"))
         return print_help();
     showRectified = !parser.has("nr");

@@ -13,7 +13,7 @@ import time
 import scipy
 
 #change it to your own global path to workspace
-GLOBAL_PATH = '/home/rachillesf/catkin_ws'
+GLOBAL_PATH = '/home/wpf/catkin_vi_ekf'
 #cv2.namedWindow("window", cv2.WINDOW_AUTOSIZE) 
 class Rectify:
 
